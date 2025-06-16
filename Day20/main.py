@@ -1,6 +1,8 @@
-from turtle import Screen, Turtle
+from turtle import Screen
 import time
 from snake import Snake
+from food import Food
+from score import Score
 
 screen = Screen()
 screen.setup(600, 600)
@@ -11,6 +13,9 @@ canvas = screen.getcanvas()
 canvas.focus_force()
 
 snake1 = Snake()
+food = Food()
+score = Score()
+
 
 screen.listen()
 screen.onkey(snake1.up, "Up")
@@ -21,11 +26,27 @@ screen.onkey(snake1.right, "Right")
 
 
 
-
 game_is_on = True
+i = 0
 while game_is_on:
     snake1.move()
-    time.sleep(0.1)
+    time.sleep(0.08)
     screen.update()
 
+    pos = snake1.segments[0].pos()
+    if pos[0]>=280 or pos[0]<=-280 or pos[1]<=-280 or pos[1]>=280:
+        game_is_on = False
+
+    if snake1.segments[0].distance(food) < 15:
+        food.change_spot()
+        i+=1
+        score.clear()
+        score.write("Score is "+str(i), align='center', font=('Arial', 20, 'normal'))
+        snake1.add_tail()
+    
+    if snake1.collision():
+        game_is_on = False
+        
+
+score.final_screen(i)
 screen.exitonclick()

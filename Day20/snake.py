@@ -16,6 +16,20 @@ class Snake:
             new_segment.penup()
             self.segments.append(new_segment)
             x-=20
+
+    def add_tail(self):
+        new_segment = Turtle(shape="square")
+        new_segment.color("white")
+        self.segments.append(new_segment)
+
+    def collision(self):
+        for seg in self.segments[1:]:
+            if self.segments[0].distance(seg)<15:
+                return True
+        return False
+            
+
+
     
     def move(self):
             for seg_num in range(len(self.segments)-1, 0, -1):
