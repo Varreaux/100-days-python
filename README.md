@@ -1,5 +1,5 @@
 # 100 days python
 
-![Demo](result.gif)
+![Demo](Day20/result.gif)
 
 test
