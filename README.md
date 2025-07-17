@@ -12,7 +12,7 @@ On Day 21 I built the pong:
 
 
 
-<p float="left">
+<!-- <p float="left">
   <img src="Day20/result.gif" width="45%" />
   <img src="Day21/result.gif" width="45%" />
-</p>
+</p> -->
