@@ -2,13 +2,17 @@
 
 The goal is to build 100 small python projects in roughly 100 days. For example:
 
-On Day 20 I built the classic snake game:
+On Day 21 I built the classic snake game:
 
-![Demo](Day20/result.gif)
+![Demo](Day20_21/result.gif)
 
-On Day 21 I built the pong:
+On Day 22 I built the pong:
 
-![Demo](Day21/result.gif)
+![Demo](Day22/result.gif)
+
+On Day 23 was an emulation of chicken crossing but with a turtle:
+
+![Demo](Day23/result.gif)
 
 
 
