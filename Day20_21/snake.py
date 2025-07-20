@@ -28,7 +28,11 @@ class Snake:
                 return True
         return False
             
-
+    def reset(self):
+        for seg in self.segments:
+            seg.teleport(1000,1000)
+        self.segments.clear()
+        self.create_snake()
 
     
     def move(self):

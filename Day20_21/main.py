@@ -34,19 +34,17 @@ while game_is_on:
     screen.update()
 
     pos = snake1.segments[0].pos()
-    if pos[0]>=280 or pos[0]<=-280 or pos[1]<=-280 or pos[1]>=280:
-        game_is_on = False
+    if pos[0]>=280 or pos[0]<=-280 or pos[1]<=-280 or pos[1]>=280 or snake1.collision():
+        snake1.reset()
+        score.reset(i)
+        food.change_spot()
+        i=0
 
     if snake1.segments[0].distance(food) < 15:
         food.change_spot()
         i+=1
-        score.clear()
-        score.write("Score is "+str(i), align='center', font=('Arial', 20, 'normal'))
+        score.update(i)
         snake1.add_tail()
     
-    if snake1.collision():
-        game_is_on = False
-        
 
-score.final_screen(i)
 screen.exitonclick()

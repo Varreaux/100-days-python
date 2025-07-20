@@ -12,6 +12,6 @@ class Food (Turtle):
 
     
     def change_spot(self):
-        rand_x = random.randint(-280, 280)
-        rand_y = random.randint(-280, 280)
+        rand_x = random.randint(-270, 270)
+        rand_y = random.randint(-270, 270)
         self.teleport(rand_x, rand_y)
