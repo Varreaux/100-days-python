@@ -18,7 +18,6 @@ continue_game = True
 
 states_found = 0
 found = []
-not_found = []
 while continue_game:
     for state in states:
         if guess.lower() == state.lower():
@@ -38,9 +37,10 @@ while continue_game:
     guess = screen.textinput(f"{states_found}/50", "Name a state")
 
 if guess.lower() == "exit":
-    for state in states:
-        if state not in found:
-            not_found.append(state)
+    not_found = [state for state in states if (state not in found)]
+    # for state in states:
+    #     if state not in found:
+    #         not_found.append(state)
     df = pandas.DataFrame(not_found, columns=["states not found"])
     df.to_csv("Day25/states_not_found.csv", index=False)
     exit()
